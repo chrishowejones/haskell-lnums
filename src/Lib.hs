@@ -1,4 +1,12 @@
-module Lib where
+module Lib (
+  PadMode(PadLeft, PadRight),
+  numberAllLines,
+  numberLines,
+  numberNonEmptyLines,
+  numberAndIncrementNonEmptyLines,
+  pad,
+  prettyNumberedLines
+  ) where
 
 import Data.Char ( isSeparator, isPrint )
 

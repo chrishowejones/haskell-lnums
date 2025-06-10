@@ -1,6 +1,7 @@
 module Main (main) where
 
-import System.Environment
+import System.Environment ( getArgs, getProgName )
+import Lib ( numberAllLines, prettyNumberedLines, PadMode(PadLeft) )
 
 printHelpText :: String -> IO ()
 printHelpText msg = do
@@ -23,5 +24,9 @@ main = do
   let mFilePath = parseArguments cliArgs
   maybe
     (printHelpText "Missing filename")
-    (\filePath -> putStrLn filePath)
+    (\filePath -> do
+        fileLines <- readLines filePath
+        let numbered = numberAllLines fileLines
+            prettyNumbered = prettyNumberedLines PadLeft numbered
+        mapM_ putStrLn prettyNumbered)
     mFilePath
