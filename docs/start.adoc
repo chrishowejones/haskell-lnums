@@ -1,0 +1,22 @@
+= Start an ascidoc
+
+This is an ascidoc to try out this documentation format.
+
+== Is it any good?
+
+To be honest, I'm not sure yet as I haven't used it for anything in the past.
+
+This document is really a test of how good it is.
+
+== Some code examples
+
+I thought I'd add some code examples in this section just to see what they look like.
+
+Here's some simple Clojure.
+
+First, here's a Clojure snippet that sums up all the numbers from 0 to 9.
+
+[source,clojure]
+----
+(reduce + (range 10))
+----
